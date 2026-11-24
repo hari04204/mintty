@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/desktop/workspace/mintty/build",
+  "command": "/usr/bin/c++  -I/home/desktop/workspace/mintty/include  -o CMakeFiles/mintty.dir/src/main.cpp.o -c /home/desktop/workspace/mintty/src/main.cpp",
+  "file": "/home/desktop/workspace/mintty/src/main.cpp",
+  "output": "CMakeFiles/mintty.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/desktop/workspace/mintty/build",
+  "command": "/usr/bin/c++  -I/home/desktop/workspace/mintty/include  -o CMakeFiles/mintty.dir/src/mintty.cpp.o -c /home/desktop/workspace/mintty/src/mintty.cpp",
+  "file": "/home/desktop/workspace/mintty/src/mintty.cpp",
+  "output": "CMakeFiles/mintty.dir/src/mintty.cpp.o"
+}
+]

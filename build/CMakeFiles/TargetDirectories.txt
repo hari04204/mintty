@@ -1,0 +1,3 @@
+/home/desktop/workspace/mintty/build/CMakeFiles/mintty.dir
+/home/desktop/workspace/mintty/build/CMakeFiles/edit_cache.dir
+/home/desktop/workspace/mintty/build/CMakeFiles/rebuild_cache.dir

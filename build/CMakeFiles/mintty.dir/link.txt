@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/mintty.dir/link.d CMakeFiles/mintty.dir/src/main.cpp.o CMakeFiles/mintty.dir/src/mintty.cpp.o -o mintty
