@@ -32,6 +32,10 @@ void Shell::run() {
     }
     
 		std::vector<std::string> tokens = tokenize(line);
+
+		for(std::string token: tokens){
+			std::cout << token << std::endl;
+		}
   }
 }
 
@@ -51,5 +55,6 @@ std::vector<std::string> Shell::tokenize(std::string &line){
 			current.clear();
 		}
 	}
+	if(!current.empty()) tokens.push_back(current);
 	return tokens;
 }
