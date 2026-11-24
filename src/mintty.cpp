@@ -30,10 +30,26 @@ void Shell::run() {
       std::cout << "exiting shell" << std::endl;
       break;
     }
-    std::cout << line << std::endl;
+    
+		std::vector<std::string> tokens = tokenize(line);
   }
 }
 
 bool Shell::readLine(std::string &line) {
   return static_cast<bool>(std::getline(std::cin, line));
+}
+
+std::vector<std::string> Shell::tokenize(std::string &line){
+	std::vector<std::string> tokens;
+	std::string current;
+	for(char c: line){
+		if(c!=' '){
+			current+=c;
+		}
+		else{
+			tokens.push_back(current);
+			current.clear();
+		}
+	}
+	return tokens;
 }
