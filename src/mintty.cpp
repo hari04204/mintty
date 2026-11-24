@@ -1,33 +1,39 @@
 #include "mintty.hpp"
 #include <cstdio>
+#include <cstring>
 #include <iostream>
 #include <limits.h>
 #include <ostream>
 #include <string>
 #include <unistd.h>
+#include <vector>
 
 Shell::Shell() {};
 
 void Shell::run() {
   constexpr size_t size = PATH_MAX;
   char buffer[size];
-	std::string line;
+  std::string line;
 
   while (true) {
     if (getcwd(buffer, size) != NULL) {
-      std::cout << buffer << " " << std::flush;
+      // finds the last occurrance of the char
+			const char *slash = strrchr(buffer, '/');
+			// point to the next char if exists
+      const char *name = slash ? slash + 1 : buffer;
+      std::cout << name << "➜" << " " << std::flush;
     } else {
       perror("getcwd");
-		}
+    }
 
-		if(!readLine(line)){
-			std::cout << "exiting shell" << std::endl;
-			break;
-		}
-		std::cout << line << std::endl;
+    if (!readLine(line)) {
+      std::cout << "exiting shell" << std::endl;
+      break;
+    }
+    std::cout << line << std::endl;
   }
 }
 
-bool Shell::readLine(std::string& line){
-	return static_cast<bool>(std::getline(std::cin, line));
+bool Shell::readLine(std::string &line) {
+  return static_cast<bool>(std::getline(std::cin, line));
 }
