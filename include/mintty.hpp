@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <string>
 #include <unistd.h>
 #include <vector>
@@ -10,7 +11,8 @@ public:
   ~Shell() = default;
 
 private:
-  bool readLine(std::string& line);
-  std::vector<std::string> tokenize(std::string& line);
-  void execute();
+  int lastStatus = 0;
+  bool readLine(std::string &line);
+  std::vector<std::string> tokenize(const std::string &line);
+  int execute(const std::vector<std::string> &tokens);
 };
